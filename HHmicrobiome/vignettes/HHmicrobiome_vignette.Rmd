@@ -1,0 +1,24 @@
+---
+title: "HHmicrobiome_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HHmicrobiome_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+Write a description of my package here
+bro...vignettes are lowkey a lot of work
+
+
+```{r setup}
+library(HHmicrobiome)
+```
