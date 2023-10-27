@@ -1,12 +1,16 @@
 Package: HHmicrobiome
-Title: What the Package Does (One Line, Title Case)
+Title: The HHmicrobiome package hopes to aid in the process of data analysis and visualization for Earth Commons' "Hoya Harvest" Garden.
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Mary", "Nguyen", , "mtn45@georgetown.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: HHmicrobiome takes raw rRNA/ITS data and splits the full taxonomic name to focus on the phylumn level with the funtion "HHsplit." The function is used in the larger "HHclean" function that cleans and formats the data so that it can ultimately be visualized. The last function in the package is "HHplot" which plots stacked bar charts and grouped stacked bar charts. This allows the user to compare microbiome data through the years.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
+Imports:
+  ggplot2,
+  dplyr,
+  tidyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

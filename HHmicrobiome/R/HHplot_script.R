@@ -1,12 +1,10 @@
 #'@title Plotting stacked bar charts of abundance data
 #'@description
-#'This function takes cleaned datasets as an input. If there is only one clean dataset input, it will plot a stacked bar chart. If there are two clean dataset inputs, it will plot a clustered stacked bar chart. It allows for comparison through different years that data is collected.
+#'  This function takes cleaned datasets as an input. If there is only one clean dataset input, it will plot a stacked bar chart. If there are two clean dataset inputs, it will plot a clustered stacked bar chart. It allows for comparison through different years that data is collected.
 #' 
 #'@param df1 The name of one specified data set
 #'@param df2 The name of the second specified data set. If NULL, the default, the function will just use the first specified dataset to plot a stacked bar chart.
 #'@export 
-
-##install ggplot2 and dplyr packages
 
 HHplot <- function(df1, df2 = NULL){
   library(ggplot2)
@@ -26,10 +24,15 @@ HHplot <- function(df1, df2 = NULL){
     dat2 <- df1[df1$plot %in% df2$plot, ]
     dat3 <- df2[df2$plot %in% df1$plot, ]
     combo_dat <- as.data.frame(rbind(dat2, dat3))
+    character_date <- as.character(combo_dat$year)
+    combo_dat[["year"]] <- character_date
     
-    combo_plot <- combo_dat %>%
-      ggplot(aes(x = plot, y = abundance, fill = phylum, group = year)) +
-      geom_bar(stat = "identity", position = "dodge") 
+    combo_plot <- ggplot(combo_dat, aes (fill = phylum,
+                                         y = abundance,
+                                         x = year)) +
+      geom_bar(position = "stack",
+               stat = "identity") +
+      facet_wrap(~ plot)
     
     print(combo_plot)
     }

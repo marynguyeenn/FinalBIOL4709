@@ -1,6 +1,6 @@
 #'@title Transforming rRNA/ITS sequencing data to a similar, standard format
-#'@description
-#'This function takes the an input of sequenced rRNA/ITS data and changes its structure from wide, to long. It also categorizes the information by the phylum taxonomy, and adds a column to indicate the year that the data samples were taken.
+#'@description 
+#'  This function takes the an input of sequenced rRNA/ITS data and changes its structure from wide, to long. It also categorizes the information by the phylum taxonomy, and adds a column to indicate the year that the data samples were taken.
 #' 
 #'@param df The name of the specified data set
 #'@param year The year the that the data set was collected
