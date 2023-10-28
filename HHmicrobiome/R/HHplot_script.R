@@ -4,16 +4,15 @@
 #' 
 #'@param df1 The name of one specified data set
 #'@param df2 The name of the second specified data set. If NULL, the default, the function will just use the first specified dataset to plot a stacked bar chart.
+#'@import dplyr
+#'@import ggplot2
 #'@export 
 
 HHplot <- function(df1, df2 = NULL){
-  library(ggplot2)
-  library(dplyr)
-  
   #just plot df1
   if(is.null(df2)){ 
     #graph with these lines of code if only one df is given
-    one_plot <- ggplot(df1, aes(fill=phylum, y=abundance, x=plot)) + 
+    one_plot <- ggplot2::ggplot(df1, aes(fill=phylum, y=abundance, x=plot)) + 
       geom_bar(position='stack', stat='identity')
     
     print(one_plot)
@@ -27,7 +26,7 @@ HHplot <- function(df1, df2 = NULL){
     character_date <- as.character(combo_dat$year)
     combo_dat[["year"]] <- character_date
     
-    combo_plot <- ggplot(combo_dat, aes (fill = phylum,
+    combo_plot <- ggplot2::ggplot(combo_dat, aes (fill = phylum,
                                          y = abundance,
                                          x = year)) +
       geom_bar(position = "stack",

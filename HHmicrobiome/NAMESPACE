@@ -3,3 +3,6 @@
 export(HHclean)
 export(HHplot)
 export(HHsplit)
+import(dplyr)
+import(ggplot2)
+import(tidyr)

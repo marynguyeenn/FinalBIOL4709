@@ -13,18 +13,13 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-
-The HHmicrobiome package hopes to aid in the process of data analysis and visualization for Earth Commons' "Hoya Harvest" Garden. The Hoya Harvest (HH) Garden is a sustainable, mini-urban farm on the 4th floor of Georgetown University's Regents patio. Hoya Harvest hopes to display that regenerative agriculture works on a small scale and understanding microbial diversity is an essential part of defining healthy soil!
-
-Start by installing and loading the package!
+Start by loading the package!
 ```{r setup}
 library(HHmicrobiome)
 ```
-
 Clean your data sets! Using the "testing1" and "testing2" example datasets, input your datasets into the HHclean function along with the year that the microbial data was collected.
 
 Assign the cleaned data sets to new variable names.
-
 ```{r}
 HHclean(testing1, 2016)
 
@@ -34,9 +29,7 @@ HHclean(testing2, 2017)
 
 clean2017 <- HHclean(testing2, 2017)
 ```
-
 Plot your data set! If you would like to see a stacked bar chart output of the microbial data from one year, input one of your cleaned and renamed datasets into the HHplot function.
-
 ```{r}
 HHplot(clean2016)
 ```
@@ -46,4 +39,5 @@ If you would like to compare the microbial data collected from the same plots du
 ```{r}
 HHplot(clean2016, clean2017)
 ```
+
 
